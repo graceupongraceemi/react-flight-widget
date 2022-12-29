@@ -1,8 +1,11 @@
+import Table from './components/Table';
+
 const App = () => {
   return (
-    <>
-      <div>Hello</div>
-    </>
+    <div className='departures'>
+      <header>DEPARTURES</header>
+      <Table />
+    </div>
   );
 };
 
