@@ -1,5 +1,20 @@
+import { useState, useEffect } from 'react';
+
 const TableBody = () => {
-  return <div>TableBody</div>;
+  const [flights, setFlights] = useState(null);
+
+  const getFlights = () => {
+    fetch('http://localhost:8000/flights')
+      .then((response) => response.json())
+      .then((flights) => setFlights(flights));
+      .catch(err => console.log(err));
+  };
+
+  useEffect(() => getFlight(), [])
+
+  console.log(flights)
+
+  return <tbody></tbody>;
 };
 
 export default TableBody;
