@@ -6,15 +6,19 @@ const TableBody = () => {
   const getFlights = () => {
     fetch('http://localhost:8000/flights')
       .then((response) => response.json())
-      .then((flights) => setFlights(flights));
+      .then((flights) => setFlights(Object.values(flights.data)));
       .catch(err => console.log(err));
   };
 
-  useEffect(() => getFlight(), [])
+  useEffect(() => getFlights(), [])
 
   console.log(flights)
 
-  return <tbody></tbody>;
+  return (   
+    <tbody>
+      
+    </tbody>
+    );
 };
 
 export default TableBody;
