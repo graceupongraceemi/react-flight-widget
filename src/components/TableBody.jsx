@@ -16,7 +16,9 @@ const TableBody = () => {
 
   return (   
     <tbody>
-      
+      {flights?.map((flight, _index) => (
+        <TableRow key={_index} flight={flight} />
+      ))}
     </tbody>
     );
 };
